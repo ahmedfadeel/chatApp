@@ -17,22 +17,14 @@
   
   
  function sendtoUser() {
-   var userName=$("#userName_text").text();
-   var recieve="";
-   
-   if (userName === "ahmed"){
-      recieve="ah";
-   }
-   else{
-      recieve="ahmed";
-   }
+   var recieve=friend;
+ 
    var message_obj={
       text:$("#text").val(),
       reciever:recieve,
       sender:userName
     };
   
-
  
  console.log(message_obj)
  stompClient.send( "/app/send.message", {} , JSON.stringify(message_obj) );

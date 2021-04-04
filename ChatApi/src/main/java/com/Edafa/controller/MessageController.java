@@ -50,12 +50,12 @@ public class MessageController {
 	}
     
 	@ResponseBody
-	@GetMapping("/message.getBySender")
-	public List<String> getMessages_BySender(@PathVariable("sender")  String sender ,@RequestParam("reciever") String reciever){
+	@GetMapping("/message.getBySender/{sender}/{reciever}")
+	public List<String> getMessages_BySender(@PathVariable  String sender ,@RequestParam String reciever){
 		
 		 logger.info(sender  +" " );
 		 String name ="ahmed";
-		 List<String> messages=_service.findBySender(sender);
+		 List<String> messages=_service.findBySender_AndReciver(sender, reciever);
 		 logger.info(messages.size() +" " + sender);
 		 return messages;
 	}
