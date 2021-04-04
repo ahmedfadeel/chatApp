@@ -51,11 +51,11 @@ public class MessageController {
     
 	@ResponseBody
 	@GetMapping("/getMessages")
-	public List<String> getMessages_BySender(@RequestParam String  sender , @RequestParam String  reciever){
+	public List<Message> getMessages_BySender(@RequestParam String  sender , @RequestParam String  reciever){
 		 String sender_=sender;
 		 String reciever_=reciever;
 		 
-		 List<String> messages=_service.findBySender_AndReciver(sender_ , reciever_);
+		 List<Message> messages=_service.findBySender_AndReciver(sender_ , reciever_);
 		 logger.info(messages.size() +" " + sender);
 		 return messages;
 	}

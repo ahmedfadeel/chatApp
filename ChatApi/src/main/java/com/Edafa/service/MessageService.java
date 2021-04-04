@@ -15,12 +15,12 @@ public class MessageService {
     private   MessageRepository  _repo;
 	
 	
-	public List<String>  findBySender(String sender ){
+	public List<Message>  findBySender(String sender ){
 		
 		return _repo.findBySender(sender);
 	}
 	
-	 public List<String>  findBySender_AndReciver(String sender ,String reciever){
+	 public List<Message>  findBySender_AndReciver(String sender ,String reciever){
 		 return _repo.findBySender_AndReciver(sender, reciever);
 		 
 	 }

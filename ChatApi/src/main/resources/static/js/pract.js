@@ -15,7 +15,7 @@ function getAllUsers(){
    console.log("in display messages "+ result.length );
   $.each(result, function(i, field){  
     console.log(field);
-    $("#messages").append("  <li> <h4>  " + friend + "  </h4>  <p>  " +  field + " </p> </li>" );
+    $("#messages").append("  <li> <h4>  " + field.sender + "  </h4>  <p>  " +  field.text + " </p> </li>" );
        
    });
 } 

@@ -17,11 +17,11 @@ public interface MessageRepository extends JpaRepository<Message, Long> {
 	 * reciever  sender
 	 * */
 
-	@Query("SELECT m.text FROM Message m WHERE m.sender = ?1  ")
-    public List<String>  findBySender(String sender );
+	@Query("SELECT m FROM Message m WHERE m.sender = ?1  ")
+    public List<Message>  findBySender(String sender );
 	
-	@Query("SELECT m.text FROM Message m WHERE  m.sender = ?1 and   m.reciever = ?2  or  m.sender = ?2 and   m.reciever = ?1")
-    public List<String>  findBySender_AndReciver(String sender ,String reciever);
+	@Query("SELECT m FROM Message m WHERE  m.sender = ?1 and   m.reciever = ?2  or  m.sender = ?2 and   m.reciever = ?1")
+    public List<Message>  findBySender_AndReciver(String sender ,String reciever);
 	
 
 }
