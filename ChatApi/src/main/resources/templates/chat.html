@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+<meta charset="ISO-8859-1">
+
+<title>Welcome to chatApp Home</title>
+<link rel="stylesheet" type="text/css"
+	href="/webjars/bootstrap/css/bootstrap.min.css" />
+<script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+<script type="text/javascript"
+	src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css"  href="/css/style.css" />
+	
+</head>
+<body>
+<div class="container ">
+    <h3 class="text-center  wel-header">
+      welcome <span id="userName_text" th:text="${name}" /> in chat App
+
+    </h3>
+
+    <div class="row">
+      <div class="col">
+        <div class="connectbutton text-center">
+          <button class="text-center" id="connect"> connect to chat </button> <br>
+  
+        </div>
+      </div>
+    </div>
+
+    
+
+   <div class="row">
+     <div class="col-md-3">
+      
+      <div class="messages-list">
+        <div  id="username" class="userName">
+      
+         
+        </div>
+        
+       
+        
+       
+      </div>
+     </div>
+
+     <div class="col-md-9">
+      <div class=" messages-list ">
+        <ul  id="messages" class="messages">
+          
+          
+        </ul>
+      </div>
+
+      <div class=" sendMessage-row">
+        <input type="text" id="text" class="message-input" name="text"> 
+        <div class="send-button">
+          <button id="send"> SEND </button>
+        </div>  
+      </div>
+       </div>
+      
+    </div>
+  </div>
+	<script type="text/javascript"
+		src="/webjars/sockjs-client/sockjs.min.js"></script>
+	<script type="text/javascript"
+		src="/webjars/stomp-websocket/stomp.min.js"></script>
+	<script type="text/javascript" src="/js/pract.js"></script>
+	<script type="text/javascript" src="/js/chat.js"></script>
+	
+</body>
+</html>

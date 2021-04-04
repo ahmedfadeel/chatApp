@@ -1,0 +1,137 @@
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: content-box;
+  background-color: rgb(210, 245, 247);
+  font-family: "Segoe UI", Tahoma;
+}
+#name {
+  color: white;
+  background-color: black;
+}
+
+.logForm {
+  margin: auto;
+}
+.wel-header {
+  color: rgb(2, 91, 255);
+}
+.connectbutton button {
+  background-color: rgb(0, 184, 255);
+  line-height: 50px;
+  width: 300px;
+
+  color: white;
+  font-size: 25px;
+  margin-top: 30px;
+  border: 0.5px solid rgba(239, 238, 241, 0.2);
+  border-radius: 22px;
+}
+.connectbutton button:hover {
+  background-color: rgb(112, 77, 209);
+  cursor: pointer;
+}
+.sendMessage-row {
+  margin-top: 40px;
+  position: relative;
+  left: 9%;
+  margin-bottom:30px;
+}
+
+.reciever-label,
+.message-label {
+  color: rgb(2, 91, 255);
+  font-size: 20px;
+  font-weight: 400;
+}
+.message-input {
+  margin-left: 20px;
+  line-height: 50px;
+
+  min-width: 450px;
+  border: 0.5px solid rgba(239, 238, 241, 0.2);
+  border-radius: 20px;
+}
+
+.send-button button {
+  position: absolute;
+  left: 70%;
+  top: 7%;
+  line-height: 40px;
+  width: 120px;
+  color: rgb(0, 19, 17);
+  background-color: white;
+  border: 0.5px solid rgba(239, 238, 241, 0.2);
+  border-radius: 30px;
+}
+.send-button button:hover {
+  cursor: pointer;
+  border: 0.5px solid rgb(125, 125, 219);
+}
+.messages-list {
+  background-color: white;
+  min-height: 400px;
+  margin-top: 30px;
+  border: 0.1px solid rgb(125, 125, 219);
+  border-radius: 30px;
+}
+.messages {
+  list-style-type: none;
+  padding-top: 20px;
+}
+
+.messages li h4 {
+  color: rgb(2, 91, 255);
+  font-weight: 300px;
+}
+
+.messages li p {
+  background-color: rgba(176, 246, 255, 0.5);
+  width: 50%;
+  line-height: 40px;
+  -webkit-line-clamp: inherit;
+  border-radius: 10px;
+  padding: 5px;
+  overflow: hidden;
+  text-overflow: clip;
+}
+.link_class {
+  color: black;
+  background-color: black;
+  text-decoration-style: none;
+}
+.userName {
+  display: inline;
+}
+.userName button{
+  color: #043175;
+  position: relative;
+  font-weight: 500;
+  top: -45px;
+  left: 90px;
+  background-color: inherit;
+  border:0px solid black;
+  min-width:70px;
+}
+.userName button:hover  {
+  text-decoration: none;
+  background-color: none;
+  border:0px solid black;
+}
+.username_li {
+  margin-top: 20px;
+}
+
+.userImage {
+  background-color: black;
+  width: 70px;
+  height: 60px;
+  padding-left: 26px;
+  padding-top: 8px;
+  border-radius: 50%;
+  margin-top: 10px;
+  margin-left: 10px;
+  background-color: rgb(210, 245, 247);
+  font-size: 30px;
+  text-transform: uppercase;
+}

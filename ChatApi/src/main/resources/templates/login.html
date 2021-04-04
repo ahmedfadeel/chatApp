@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+
+
+   <title>Welcome to chatApp Home</title>
+   
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+    <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+    
+   
+</head>
+<body>
+	<div class="container text-center">
+		<h3> log in </h3>
+	  <form  th:action="@{/login}"   th:object="${userLogin}"  method="post"   style="max-width: 350px; margin: 0 auto;">
+     
+        <div th:if="${param.error}">
+            <p class="text-danger">[[${session.SPRING_SECURITY_LAST_EXCEPTION.message}]]</p>
+        </div>
+         
+        <div th:if="${param.logout}">
+            <p class="text-warning">You have been logged out.</p>
+        </div>
+         
+        <div class="border border-secondary p-3 rounded">
+            
+            <p>
+                <input type="text"  id="username"
+                           name="username"  th:field="*{username}"  class="form-control" placeholder="user name" required autofocus/>
+            </p>
+            <p>
+                <input type="password" id="password" name="password"  th:field="*{password}"  class="form-control" placeholder="Password" required />
+            </p>
+            
+            <p>
+                <input type="submit" value="Login" class="btn btn-primary" />
+            </p>
+        </div>
+    </form>   
+				
+        
+      <h3> <a th:href="@{/register}"> create  new account   </a> </h3>
+      
+      
+	</div>
+</body>
+</html>
