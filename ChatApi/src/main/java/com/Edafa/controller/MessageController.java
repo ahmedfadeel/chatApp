@@ -9,20 +9,20 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
 
 import com.Edafa.model.Message;
+import com.Edafa.model.MessageRequest;
 import com.Edafa.service.MessageService;
 
 
 @CrossOrigin("*")
+@Controller
 public class MessageController {
 	Logger logger = LoggerFactory.getLogger(MessageController.class);
 
@@ -50,11 +50,10 @@ public class MessageController {
 	}
     
 	@ResponseBody
-	@GetMapping("/message.getBySender/{sender}/{reciever}")
-	public List<String> getMessages_BySender(@PathVariable  String sender ,@RequestParam String reciever){
-		
-		 logger.info(sender  +" " );
-		 String name ="ahmed";
+	@PostMapping("/message.getBySender")
+	public List<String> getMessages_BySender(@RequestBody MessageRequest message_request){
+		 String sender=message_request.getSender();
+		 String reciever=message_request.getReciever();
 		 List<String> messages=_service.findBySender_AndReciver(sender, reciever);
 		 logger.info(messages.size() +" " + sender);
 		 return messages;

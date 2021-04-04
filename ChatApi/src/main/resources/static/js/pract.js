@@ -22,18 +22,21 @@ function getAllUsers(){
 function get_messages(ms_sender, ms_reciever) {
     let sender_=ms_sender;
     let reciever_ =ms_reciever;
+    let message_request={
+     sender:sender_,
+     reciever : reciever_
+    }
     console.log(" in get messages  "+ms_sender  +"  and reciever is  " +ms_reciever  );
     $.ajax({
         url: 'http://localhost:8082/message.getBySender',
-        type: 'get',
+        type: 'post',
+        dataType: 'json',
+        contentType: 'application/json',
         success: function (data) {
             console.log(" in get messages  "+ms_sender  +"  and reciever is  " +ms_reciever  );
             display_Messages(data);
         },
-        data:{
-          sender : sender_,
-          reciever:reciever_
-        }
+        data:JSON.stringify(message_request)
     });
 
   }
