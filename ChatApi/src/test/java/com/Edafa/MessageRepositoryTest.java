@@ -68,12 +68,7 @@ public class MessageRepositoryTest {
 	    	 assertThat(messages.size() > 0);
 	    }
 	    */
-	    @Test
-	    public void testGetMessagesbySender_AndReciever() {
-	    	List messages= repo.findBySender("Hisham");
-	    	 assertThat(messages.size() == 2);
-	    }
-	    
+	  
 	    
 	    
 	    /*

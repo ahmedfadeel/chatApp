@@ -25,17 +25,16 @@
       sender:userName
     };
   
- 
+ show_sendedMessages( message_obj);
  console.log(message_obj)
  stompClient.send( "/app/send.message", {} , JSON.stringify(message_obj) );
 
-  show_sendedMessages( message_obj);
 }
 
 function show_sendedMessages(message){
-    console.log("in show message " + message);
-   $("#messages").append("  <li><h4>  " + userName + "  </h4>   <p>  " +  message.text + " </p> </li>" 
-   );
+    console.log("in show message " + message.text);
+    $("#messages").append("  <li> <h4>  " + userName + "  </h4>  <p>  " +  message.text + " </p> </li>" );
+   
 }
 function show_recivedMessage(message) {
   console.log("in show message " + message);

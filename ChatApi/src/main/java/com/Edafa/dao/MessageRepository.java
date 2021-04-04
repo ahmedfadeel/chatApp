@@ -20,7 +20,7 @@ public interface MessageRepository extends JpaRepository<Message, Long> {
 	@Query("SELECT m.text FROM Message m WHERE m.sender = ?1  ")
     public List<String>  findBySender(String sender );
 	
-	@Query("SELECT m.text FROM Message m WHERE m.sender = ?1 and   m.reciever = ?2 ")
+	@Query("SELECT m.text FROM Message m WHERE  m.sender = ?1 and   m.reciever = ?2  or  m.sender = ?2 and   m.reciever = ?1")
     public List<String>  findBySender_AndReciver(String sender ,String reciever);
 	
 
