@@ -14,10 +14,10 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.Edafa.model.Message;
-import com.Edafa.model.MessageRequest;
 import com.Edafa.service.MessageService;
 
 
@@ -31,7 +31,7 @@ public class MessageController {
 
 	@Autowired
 	MessageService _service;
-
+	
 	@ResponseBody
 	@PostMapping("/save-Msg")
 	public Message  saveMsg(@RequestBody Message msg) {
@@ -50,14 +50,17 @@ public class MessageController {
 	}
     
 	@ResponseBody
-	@PostMapping("/message.getBySender")
-	public List<String> getMessages_BySender(@RequestBody MessageRequest message_request){
-		 String sender=message_request.getSender();
-		 String reciever=message_request.getReciever();
-		 List<String> messages=_service.findBySender_AndReciver(sender, reciever);
+	@GetMapping("/getMessages")
+	public List<String> getMessages_BySender(@RequestParam String  sender , @RequestParam String  reciever){
+		 String sender_=sender;
+		 String reciever_=reciever;
+		 
+		 List<String> messages=_service.findBySender_AndReciver(sender_ , reciever_);
 		 logger.info(messages.size() +" " + sender);
 		 return messages;
 	}
+	
+	
 	
 
 }

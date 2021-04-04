@@ -17,11 +17,11 @@
   
   
  function sendtoUser() {
-   var recieve=friend;
+   console.log(friend);
  
-   var message_obj={
+   let message_obj={
       text:$("#text").val(),
-      reciever:recieve,
+      reciever:friend,
       sender:userName
     };
   

@@ -5,7 +5,7 @@ function getAllUsers(){
     $.getJSON("http://localhost:8082/getUsers_names", displayNames);
 };
   $(document).on("click", ".messages-list .userName button" , function() {
-          friend=$(this).text();
+          friend=$(this).text().trim();
           console.log (friend + "  "+ userName);
           get_messages(friend,userName);
           
@@ -20,23 +20,21 @@ function getAllUsers(){
    });
 } 
 function get_messages(ms_sender, ms_reciever) {
-    let sender_=ms_sender;
-    let reciever_ =ms_reciever;
-    let message_request={
-     sender:sender_,
-     reciever : reciever_
-    }
-    console.log(" in get messages  "+ms_sender  +"  and reciever is  " +ms_reciever  );
+    var sender_=ms_sender;
+    var reciever_ =ms_reciever;
+    
+   
     $.ajax({
-        url: 'http://localhost:8082/message.getBySender',
-        type: 'post',
-        dataType: 'json',
-        contentType: 'application/json',
+        url: 'http://localhost:8082/getMessages',
+        type: 'get',
         success: function (data) {
             console.log(" in get messages  "+ms_sender  +"  and reciever is  " +ms_reciever  );
             display_Messages(data);
         },
-        data:JSON.stringify(message_request)
+        data:{
+         sender:sender_,
+         reciever:reciever_
+        }
     });
 
   }
