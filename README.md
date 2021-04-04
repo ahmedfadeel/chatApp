@@ -16,7 +16,7 @@ web Socket spring boot  thymeleaf  chatApp
 1. Install system dependencies: latest versions (at the time of this writing) of Java 8 , MySQL
 2. update application.properities  to set up database properities 
 3. run application    
-4. Visit [http://localhost:8080/](http://localhost:8080) 
+4. Visit [http://localhost:8082/](http://localhost:8080) 
 
 ## Notes
 - register or create new account for you and some other users to test chat application .
